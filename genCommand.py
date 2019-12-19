@@ -1,0 +1,6 @@
+baseStr = '/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/bin/java "-javaagent:/Users/peterzheng/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/192.7142.36/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=55869:/Users/peterzheng/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/192.7142.36/IntelliJ IDEA.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/peterzheng/IdeaProjects/CommentAuto/out/production/CommentAuto:/Users/peterzheng/IdeaProjects/CommentAuto/lib/lucene-core-8.3.1.jar:/Users/peterzheng/IdeaProjects/CommentAuto/lib/lucene-demo-8.3.1.jar:/Users/peterzheng/IdeaProjects/CommentAuto/lib/lucene-misc-8.3.1.jar:/Users/peterzheng/IdeaProjects/CommentAuto/lib/lucene-queries-8.3.1.jar:/Users/peterzheng/IdeaProjects/CommentAuto/lib/lucene-queryparser-8.3.1.jar:/Users/peterzheng/IdeaProjects/CommentAuto/lib/lucene-analyzers-common-8.3.1.jar:/Users/peterzheng/IdeaProjects/CommentAuto/lib/lucene-analyzers-opennlp-8.3.1.jar pikachu.Main '
+
+with open('command.sh', 'w') as f:
+    for i in range(1, 240):
+        __baseStr = baseStr + ' data/comment/u%d.txt data/questions/r%d.txt 1>data/result/count%d.txt 2>data/result/more%d.txt && echo \"%d\"' % (i, i, i, i, i)
+        f.write(__baseStr+ '\n')
